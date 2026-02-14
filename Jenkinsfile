@@ -12,7 +12,7 @@ pipeline {
         GIT_BRANCH = 'main'
         
         // Docker
-        DOCKER_IMAGE = 'saadliwissem88@gmail.com/devops-spring'
+        DOCKER_IMAGE = 'saadli/devops-spring'
         DOCKER_TAG = "${BUILD_NUMBER}"
         
         // SonarQube
@@ -21,6 +21,8 @@ pipeline {
         // Nexus
         NEXUS_URL = 'http://nexus:8081'
         NEXUS_CREDENTIALS = credentials('nexus-credentials')
+
+        DOCKER_USERNAME = "saadli"
     }
     
     stages {
