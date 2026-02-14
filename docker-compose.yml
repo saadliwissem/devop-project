@@ -3,7 +3,7 @@ version: '3.8'
 services:
   mysql-db:
     image: mysql:8
-    container_name: mysql-db
+    container_name: mysql-db-${BUILD_NUMBER}
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: devopsdb
@@ -18,7 +18,7 @@ services:
 
   spring-app:
     image: saadli/devops-spring:latest
-    container_name: spring-app
+    container_name: spring-app-${BUILD_NUMBER}
     ports:
       - "8085:8080"
     depends_on:
